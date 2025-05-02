@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.Fragment
+import com.kushwaha.omnipractice.R
 import com.kushwaha.omnipractice.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -44,6 +45,19 @@ class HomeFragment : Fragment() {
         binding.autoScrollView.doOnPreDraw {
             scrollHandler.postDelayed(scrollRunnable, 5000)
         }
+
+        binding.tabRadioGroup.setOnCheckedChangeListener { _, checkedId ->
+            binding.layoutTransact.visibility = View.GONE
+            binding.layoutInvest.visibility = View.GONE
+            binding.layoutLoans.visibility = View.GONE
+
+            when (checkedId) {
+                R.id.tabHome -> binding.layoutTransact.visibility = View.VISIBLE
+                R.id.tabShop -> binding.layoutInvest.visibility = View.VISIBLE
+                R.id.tabNew -> binding.layoutLoans.visibility = View.VISIBLE
+            }
+        }
+
 
         return binding.root
     }

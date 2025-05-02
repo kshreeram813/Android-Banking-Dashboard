@@ -436,7 +436,7 @@
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
-                android:text="Home"
+                android:text="Transact"
                 android:gravity="center"
                 android:background="@drawable/tab_selector"
                 android:textColor="#000000"
@@ -448,7 +448,7 @@
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
-                android:text="Shop"
+                android:text="Invest"
                 android:gravity="center"
                 android:background="@drawable/tab_selector"
                 android:textColor="#000000"
@@ -460,7 +460,7 @@
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
-                android:text="New Experience"
+                android:text="Loans &amp; More"
                 android:gravity="center"
                 android:background="@drawable/tab_selector"
                 android:textColor="#000000"
@@ -469,6 +469,16 @@
         </RadioGroup>
 
         <!-- Section: Dashboard Grid (3 columns) -->
+
+
+    <!-- TRANSACT Section -->
+    <LinearLayout
+        android:id="@+id/layoutTransact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -488,6 +498,7 @@
                 app:cardBackgroundColor="#FFF3E0">
 
             <LinearLayout
+                android:visibility="visible"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -723,6 +734,47 @@
 
 
         </GridLayout>
+    </LinearLayout>
+
+
+        <!-- INVEST Section -->
+        <LinearLayout
+            android:id="@+id/layoutInvest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Invest Section"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:padding="16dp"/>
+        </LinearLayout>
+
+        <!-- LOANS & MORE Section -->
+        <LinearLayout
+            android:id="@+id/layoutLoans"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="More Section"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:padding="16dp"/>
+        </LinearLayout>
+
 
     </LinearLayout>
 </ScrollView>
