@@ -421,7 +421,7 @@
 
             </LinearLayout>
         </HorizontalScrollView>
-c
+
         <RadioGroup
             android:id="@+id/tabRadioGroup"
             android:layout_width="match_parent"

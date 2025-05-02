@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">OmniPractice</string>
-    <string name="title_home">Home</string>
-    <string name="title_Summary">Summary</string>
-    <string name="title_Profile">Profile</string>
-    <string name="title_setting">Setting..</string>
+    <string name="title_home">Me</string>
+    <string name="title_Summary">My Requests</string>
+    <string name="title_Profile">Scan to Pay</string>
+    <string name="title_setting">Call Us</string>
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
