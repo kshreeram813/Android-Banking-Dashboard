@@ -15,6 +15,9 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        vectorDrawables.useSupportLibrary = true
+
     }
 
     buildTypes {
@@ -56,5 +59,8 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation (libs.androidx.cardview)
+    implementation (libs.androidx.viewpager2)
+    implementation (libs.androidx.cardview)
+    implementation (libs.androidx.appcompat.v161)
 
 }
