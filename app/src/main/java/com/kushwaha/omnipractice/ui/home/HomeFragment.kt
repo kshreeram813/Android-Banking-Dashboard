@@ -52,9 +52,9 @@ class HomeFragment : Fragment() {
             binding.layoutLoans.visibility = View.GONE
 
             when (checkedId) {
-                R.id.tabHome -> binding.layoutTransact.visibility = View.VISIBLE
-                R.id.tabShop -> binding.layoutInvest.visibility = View.VISIBLE
-                R.id.tabNew -> binding.layoutLoans.visibility = View.VISIBLE
+                R.id.tabTransact -> binding.layoutTransact.visibility = View.VISIBLE
+                R.id.tabInvest -> binding.layoutInvest.visibility = View.VISIBLE
+                R.id.tabLoans -> binding.layoutLoans.visibility = View.VISIBLE
             }
         }
 

@@ -444,7 +444,7 @@
             android:weightSum="3">
 
             <RadioButton
-                android:id="@+id/tabHome"
+                android:id="@+id/tabTransact"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
@@ -456,7 +456,7 @@
                 android:textStyle="bold"/>
 
             <RadioButton
-                android:id="@+id/tabShop"
+                android:id="@+id/tabInvest"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
@@ -468,7 +468,7 @@
                 android:textStyle="bold"/>
 
             <RadioButton
-                android:id="@+id/tabNew"
+                android:id="@+id/tabLoans"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
