@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:padding="0dp">
 
-
         <!--  Dashboard Header -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,325 +56,43 @@
         </LinearLayout>
         <!-- End of Header -->
 
-
-        <!-- Horizontal ScrollView for Account + Credit Cards -->
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="none"
-            android:layout_marginTop="8dp">
-
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="4dp"
-                android:paddingEnd="4dp">
+                android:paddingEnd="4dp"
+                android:id="@+id/rootLayout">
 
 
-                <!-- Compact View All Button Card -->
-                <androidx.cardview.widget.CardView
+                <TextView
+                    android:id="@+id/viewAllButton"
+                    android:text="View All >"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:background="@drawable/circle_background"
+                    android:padding="12dp"
                     android:layout_width="60dp"
                     android:layout_height="120dp"
-                    android:layout_margin="8dp"
-                    app:cardCornerRadius="30dp"
-                    app:cardElevation="8dp">
+                    android:layout_margin="8dp" />
+
+                <!-- Horizontal All Cards ScrollView -->
+                <HorizontalScrollView
+                    android:id="@+id/cardScroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center"
-                        android:padding="8dp">
-
-                        <TextView
-                            android:text="View"
-                            android:textColor="#000000"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-
-                        <TextView
-                            android:text="All"
-                            android:textColor="#000000"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-
-                        <ImageView
-                            android:src="@drawable/ic_arrow_downward"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_marginTop="6dp"/>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-
-
-                <!-- View All / Account Summary Card -->
-                <androidx.cardview.widget.CardView
-                    android:layout_width="280dp"
-                    android:layout_height="160dp"
-                    android:layout_marginEnd="12dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp">
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#FF6F00">
-
-                        <!-- Account Info -->
-                        <TextView
-                            android:text="Savings Account"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <TextView
-                            android:text="**** 1234"
-                            android:textColor="#FFFFFF"
-                            android:layout_marginTop="4dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <TextView
-                            android:text="₹1,24,350.00"
-                            android:textSize="20sp"
-                            android:textColor="#FFFFFF"
-                            android:textStyle="bold"
-                            android:layout_marginTop="12dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <!-- Divider -->
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginTop="12dp"
-                            android:background="#FFFFFF" />
-
-                        <!-- Button Row -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center"
-                            android:layout_marginTop="12dp"
-                            android:weightSum="3">
-
-                            <TextView
-                                android:text="Reset PIN"
-                                android:textColor="#FFFFFF"
-                                android:textSize="12sp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content" />
-
-                            <TextView
-                                android:text="Generate Card"
-                                android:textColor="#FFFFFF"
-                                android:textSize="12sp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content" />
-
-                            <TextView
-                                android:text="Statement"
-                                android:textColor="#FFFFFF"
-                                android:textSize="12sp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-
-
-
-                <!-- Credit Card 1 -->
-                <androidx.cardview.widget.CardView
-                    android:layout_width="280dp"
-                    android:layout_height="160dp"
-                    android:layout_marginEnd="12dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp">
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#333333">
-
-                        <TextView
-                            android:text="Visa Credit Card"
-                            android:textColor="#FFFFFF"
-                            android:textStyle="bold"
-                            android:textSize="16sp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <TextView
-                            android:text="**** 5678"
-                            android:textColor="#FFFFFF"
-                            android:layout_marginTop="4dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <TextView
-                            android:text="Limit: ₹1,00,000"
-                            android:textColor="#FFFFFF"
-                            android:layout_marginTop="16dp"
-                            android:textSize="14sp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-
-                        <!-- Divider -->
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginTop="12dp"
-                            android:background="#FFFFFF" />
-
-                        <!-- Button Row -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center"
-                            android:layout_marginTop="12dp"
-                            android:weightSum="3">
-
-                            <TextView
-                                android:text="Reset PIN"
-                                android:textColor="#FFFFFF"
-                                android:textSize="12sp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content" />
-
-                            <TextView
-                                android:text="Generate Card"
-                                android:textColor="#FFFFFF"
-                                android:textSize="12sp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content" />
-
-                            <TextView
-                                android:text="Statement"
-                                android:textColor="#FFFFFF"
-                                android:textSize="12sp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content" />
-                        </LinearLayout>
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- Credit Card 2 -->
-                <androidx.cardview.widget.CardView
-                    android:layout_width="280dp"
-                    android:layout_height="160dp"
-                    android:layout_marginEnd="12dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp">
-
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:padding="16dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#4CAF50">
-
-                        <TextView
-                            android:text="MasterCard"
-                            android:textColor="#FFFFFF"
-                            android:textStyle="bold"
-                            android:textSize="16sp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <TextView
-                            android:text="**** 9012"
-                            android:textColor="#FFFFFF"
-                            android:layout_marginTop="4dp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <TextView
-                            android:text="Limit: ₹50,000"
-                            android:textColor="#FFFFFF"
-                            android:layout_marginTop="16dp"
-                            android:textSize="14sp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <!-- Divider -->
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginTop="12dp"
-                            android:background="#FFFFFF" />
-
-                        <!-- Button Row -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center"
-                            android:layout_marginTop="12dp"
-                            android:weightSum="3">
-
-                            <TextView
-                                android:text="Reset PIN"
-                                android:textColor="#FFFFFF"
-                                android:textSize="12sp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content" />
-
-                            <TextView
-                                android:text="Generate Card"
-                                android:textColor="#FFFFFF"
-                                android:textSize="12sp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content" />
-
-                            <TextView
-                                android:text="Statement"
-                                android:textColor="#FFFFFF"
-                                android:textSize="12sp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content" />
-                        </LinearLayout>
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                        android:id="@+id/cardContainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" />
+                </HorizontalScrollView>
 
             </LinearLayout>
-        </HorizontalScrollView>
 
         <HorizontalScrollView
             android:id="@+id/autoScrollView"
@@ -384,7 +101,7 @@
             android:layout_marginTop="16dp"
             android:scrollbars="none">
 
-            <LinearLayout
+        <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"

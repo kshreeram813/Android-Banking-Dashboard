@@ -59,9 +59,13 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    // dependency Added
     implementation (libs.androidx.cardview)
     implementation (libs.androidx.viewpager2)
     implementation (libs.androidx.cardview)
     implementation (libs.androidx.appcompat.v161)
+    implementation (libs.androidx.recyclerview)
+    implementation (libs.androidx.cardview)
+
 
 }
