@@ -20,19 +20,12 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val scrollHandler = Handler(Looper.getMainLooper())
-    private var scrollXPos = 0
 
-    private val scrollRunnable = object : Runnable {
+    private val flipRunnable = object : Runnable {
         override fun run() {
-            val scrollView = binding.autoScrollView
-            val maxScroll = scrollView.getChildAt(0).width - scrollView.width
-
-            scrollXPos += 300
-            if (scrollXPos >= maxScroll) {
-                scrollXPos = 0
-            }
-
-            scrollView.smoothScrollTo(scrollXPos, 0)
+            val flipper = binding.actionFlipper
+            val nextIndex = (flipper.displayedChild + 1) % flipper.childCount
+            flipper.displayedChild = nextIndex
             scrollHandler.postDelayed(this, 5000)
         }
     }
@@ -57,11 +50,11 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         // Start auto-scroll after layout is drawn
-        binding.autoScrollView.doOnPreDraw {
-            scrollHandler.postDelayed(scrollRunnable, 5000)
-        }
+            binding.actionFlipper.doOnPreDraw {
+                scrollHandler.postDelayed(flipRunnable, 5000)
+            }
 
-        // Load TransactFragment by default
+            // Load TransactFragment by default
         replaceFragment(TransactFragment())
         binding.tabRadioGroup.check(R.id.tabTransact) // set default selected
 
@@ -79,7 +72,7 @@ class HomeFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        scrollHandler.removeCallbacks(scrollRunnable)
+        scrollHandler.removeCallbacks(flipRunnable)
         _binding = null
     }
 
