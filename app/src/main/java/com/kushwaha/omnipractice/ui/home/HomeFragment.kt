@@ -24,7 +24,6 @@ class HomeFragment : Fragment() {
             val scrollView = binding.autoScrollView
             val maxScroll = scrollView.getChildAt(0).width - scrollView.width
 
-            // Scroll forward until end, then reset
             scrollXPos += 300
             if (scrollXPos >= maxScroll) {
                 scrollXPos = 0
@@ -35,29 +34,28 @@ class HomeFragment : Fragment() {
         }
     }
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-        // Start auto-scroll after view is ready
+        // Start auto-scroll after layout is drawn
         binding.autoScrollView.doOnPreDraw {
             scrollHandler.postDelayed(scrollRunnable, 5000)
         }
 
-        binding.tabRadioGroup.setOnCheckedChangeListener { _, checkedId ->
-            binding.layoutTransact.visibility = View.GONE
-            binding.layoutInvest.visibility = View.GONE
-            binding.layoutLoans.visibility = View.GONE
+        // Load TransactFragment by default
+        replaceFragment(TransactFragment())
+        binding.tabRadioGroup.check(R.id.tabTransact) // set default selected
 
+        //  Switch fragments based on selected tab
+        binding.tabRadioGroup.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
-                R.id.tabTransact -> binding.layoutTransact.visibility = View.VISIBLE
-                R.id.tabInvest -> binding.layoutInvest.visibility = View.VISIBLE
-                R.id.tabLoans -> binding.layoutLoans.visibility = View.VISIBLE
+                R.id.tabTransact -> replaceFragment(TransactFragment())
+                R.id.tabInvest -> replaceFragment(InvestFragment())
+                R.id.tabLoans -> replaceFragment(LoansFragment())
             }
         }
-
 
         return binding.root
     }
@@ -68,4 +66,9 @@ class HomeFragment : Fragment() {
         _binding = null
     }
 
+    private fun replaceFragment(fragment: Fragment) {
+        childFragmentManager.beginTransaction()
+            .replace(R.id.childFragmentContainer, fragment)
+            .commit()
+    }
 }

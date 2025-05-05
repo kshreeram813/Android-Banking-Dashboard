@@ -8,7 +8,10 @@ import androidx.fragment.app.Fragment
 import com.kushwaha.omnipractice.R
 
 class TransactFragment : Fragment() {
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_transact, container, false)
     }
 }
