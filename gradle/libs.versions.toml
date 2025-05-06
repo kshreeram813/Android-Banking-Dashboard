@@ -12,6 +12,7 @@ material = "1.12.0"
 constraintlayout = "2.2.1"
 lifecycleLivedataKtx = "2.8.7"
 lifecycleViewmodelKtx = "2.8.7"
+materialVersion = "1.10.0"
 navigationFragmentKtx = "2.8.9"
 navigationUiKtx = "2.8.9"
 preference = "1.2.0"
@@ -19,6 +20,7 @@ legacySupportV4 = "1.0.0"
 fragmentKtx = "1.5.6"
 recyclerview = "1.4.0"
 viewpager2 = "1.1.0"
+viewpager2Version = "1.0.0"
 
 [libraries]
 androidx-appcompat-v161 = { module = "androidx.appcompat:appcompat", version.ref = "appcompatVersion" }
@@ -26,6 +28,7 @@ androidx-cardview = { module = "androidx.cardview:cardview", version.ref = "card
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
 androidx-viewpager2 = { module = "androidx.viewpager2:viewpager2", version.ref = "viewpager2" }
+androidx-viewpager2-v100 = { module = "androidx.viewpager2:viewpager2", version.ref = "viewpager2Version" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -39,6 +42,7 @@ androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation
 androidx-preference = { group = "androidx.preference", name = "preference", version.ref = "preference" }
 androidx-legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "legacySupportV4" }
 androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" }
+material-v1100 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // 👉 Add this line here to allow edge-to-edge content
+        //  Add this line here to allow edge-to-edge content
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
         ///

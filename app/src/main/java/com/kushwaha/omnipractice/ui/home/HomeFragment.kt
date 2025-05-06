@@ -11,6 +11,8 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.Fragment
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.widget.ViewPager2
 import com.kushwaha.omnipractice.R
 import com.kushwaha.omnipractice.databinding.FragmentHomeBinding
 
@@ -54,32 +56,37 @@ class HomeFragment : Fragment() {
                 scrollHandler.postDelayed(flipRunnable, 5000)
             }
 
-            // Load TransactFragment by default
-        replaceFragment(TransactFragment())
-        binding.tabRadioGroup.check(R.id.tabTransact) // set default selected
+            // Set up the ViewPager2 with an adapter
+            val pagerAdapter = HomePagerAdapter(this)
+            binding.viewPager.adapter = pagerAdapter
 
-        //  Switch fragments based on selected tab
-        binding.tabRadioGroup.setOnCheckedChangeListener { _, checkedId ->
-            when (checkedId) {
-                R.id.tabTransact -> replaceFragment(TransactFragment())
-                R.id.tabInvest -> replaceFragment(InvestFragment())
-                R.id.tabLoans -> replaceFragment(LoansFragment())
+            // Set up the RadioGroup to sync with ViewPager2
+            binding.tabRadioGroup.setOnCheckedChangeListener { _, checkedId ->
+                when (checkedId) {
+                    R.id.tabTransact -> binding.viewPager.currentItem = 0
+                    R.id.tabInvest -> binding.viewPager.currentItem = 1
+                    R.id.tabLoans -> binding.viewPager.currentItem = 2
+                }
             }
-        }
 
-        return binding.root
+            // Sync the RadioGroup when the ViewPager2 is swiped
+            binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+                override fun onPageSelected(position: Int) {
+                    when (position) {
+                        0 -> binding.tabRadioGroup.check(R.id.tabTransact)
+                        1 -> binding.tabRadioGroup.check(R.id.tabInvest)
+                        2 -> binding.tabRadioGroup.check(R.id.tabLoans)
+                    }
+                }
+            })
+
+            return binding.root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         scrollHandler.removeCallbacks(flipRunnable)
         _binding = null
-    }
-
-    private fun replaceFragment(fragment: Fragment) {
-        childFragmentManager.beginTransaction()
-            .replace(R.id.childFragmentContainer, fragment)
-            .commit()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -153,3 +160,18 @@ class HomeFragment : Fragment() {
         addCardsHorizontally()
     }
 }
+
+
+class HomePagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
+    override fun getItemCount(): Int = 3  // We have 3 fragments (Transact, Invest, Loans)
+
+    override fun createFragment(position: Int): Fragment {
+        return when (position) {
+            0 -> TransactFragment()
+            1 -> InvestFragment()
+            2 -> LoansFragment()
+            else -> TransactFragment()
+        }
+    }
+}
+

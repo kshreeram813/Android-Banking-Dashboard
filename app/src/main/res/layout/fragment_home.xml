@@ -199,9 +199,8 @@
                 android:textStyle="bold"/>
         </RadioGroup>
 
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/childFragmentContainer"
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
             android:name="androidx.fragment.app.Fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

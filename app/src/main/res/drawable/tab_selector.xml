@@ -1,20 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<selector xmlns:android="http://schemas.android.com/apk/res/android">-->
 
-    <!-- Selected state -->
+<!--    &lt;!&ndash; Selected state &ndash;&gt;-->
+<!--    <item android:state_checked="true">-->
+<!--        <shape android:shape="rectangle">-->
+<!--            <solid android:color="#FFE0B2" /> &lt;!&ndash; Light orange background &ndash;&gt;-->
+<!--            <stroke android:width="2dp" android:color="#FF6F00" /> &lt;!&ndash; Orange border &ndash;&gt;-->
+<!--            <corners android:radius="20dp" /> &lt;!&ndash; Rounded/circular appearance &ndash;&gt;-->
+<!--        </shape>-->
+<!--    </item>-->
+
+<!--    &lt;!&ndash; Default (unselected) state &ndash;&gt;-->
+<!--    <item>-->
+<!--        <shape android:shape="rectangle">-->
+<!--            <solid android:color="#FFFFFF" />-->
+<!--            <stroke android:width="1dp" android:color="#CCCCCC" />-->
+<!--            <corners android:radius="20dp" />-->
+<!--        </shape>-->
+<!--    </item>-->
+<!--</selector>-->
+
+
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_checked="true">
         <shape android:shape="rectangle">
-            <solid android:color="#FFE0B2" /> <!-- Light orange background -->
-            <stroke android:width="2dp" android:color="#FF6F00" /> <!-- Orange border -->
-            <corners android:radius="20dp" /> <!-- Rounded/circular appearance -->
+            <solid android:color="#FFE0B2" /> <!-- Selected color -->
+            <corners android:radius="20dp" />
         </shape>
     </item>
-
-    <!-- Default (unselected) state -->
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="#FFFFFF" />
-            <stroke android:width="1dp" android:color="#CCCCCC" />
+            <solid android:color="@android:color/transparent" /> <!-- Unselected -->
             <corners android:radius="20dp" />
         </shape>
     </item>
