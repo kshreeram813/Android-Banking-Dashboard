@@ -9,13 +9,13 @@
     app:cardElevation="6dp">
 
     <LinearLayout
+        android:id="@+id/cardBackground"
         android:orientation="vertical"
         android:padding="16dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FF6F00">
+        android:layout_height="match_parent">
 
-        <TextView
+    <TextView
             android:id="@+id/cardTitle"
             android:text="Title"
             android:textColor="#FFFFFF"

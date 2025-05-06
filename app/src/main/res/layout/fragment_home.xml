@@ -65,18 +65,36 @@
                 android:id="@+id/rootLayout">
 
 
+<!--                <TextView-->
+<!--                    android:id="@+id/viewAllButton"-->
+<!--                    android:text="View All >"-->
+<!--                    android:textColor="#000000"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:background="@drawable/circle_background"-->
+<!--                    android:padding="12dp"-->
+<!--                    android:layout_width="60dp"-->
+<!--                    android:layout_height="120dp"-->
+<!--                    android:layout_margin="8dp" />-->
+
+
                 <TextView
                     android:id="@+id/viewAllButton"
-                    android:text="View All >"
+                    android:text="View\nAll\n>"
                     android:textColor="#000000"
                     android:textStyle="bold"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     android:gravity="center"
-                    android:background="@drawable/circle_background"
-                    android:padding="12dp"
-                    android:layout_width="60dp"
-                    android:layout_height="120dp"
-                    android:layout_margin="8dp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="55dp"
+                    android:background="@drawable/view_all_background"
+                    android:elevation="2dp" />
+
+
 
                 <!-- Horizontal All Cards ScrollView -->
                 <HorizontalScrollView

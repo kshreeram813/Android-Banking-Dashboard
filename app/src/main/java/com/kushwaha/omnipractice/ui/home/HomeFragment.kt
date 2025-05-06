@@ -1,5 +1,6 @@
 package com.kushwaha.omnipractice.ui.home
 
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -100,10 +101,10 @@ class HomeFragment : Fragment() {
         viewAllButton.setOnClickListener {
             if (!isVertical) {
                 showCardsVertically()
-                viewAllButton.text = "Show Less ^"
+                viewAllButton.text = "View\nLess\n^"
             } else {
                 showCardsHorizontallyAgain()
-                viewAllButton.text = "View All >"
+                viewAllButton.text = "View\nAll\n>"
             }
             isVertical = !isVertical
         }
@@ -113,11 +114,18 @@ class HomeFragment : Fragment() {
         cardContainer.removeAllViews()
         val inflater = LayoutInflater.from(requireContext())
 
-        for ((title, number, amount) in cardData) {
+        // Destructure the Triple (title, number, amount)
+        for ((index, card) in cardData.withIndex()) {
+            val (title, number, amount) = card // Destructuring the Triple
             val cardView = inflater.inflate(R.layout.item_card, cardContainer, false)
             cardView.findViewById<TextView>(R.id.cardTitle).text = title
             cardView.findViewById<TextView>(R.id.cardNumber).text = number
             cardView.findViewById<TextView>(R.id.cardAmount).text = amount
+
+            // Set a unique background color for each card (cycling through the cardColors list)
+            val color = cardColors[index % cardColors.size] // cycling through the colors
+            cardView.setBackgroundColor(color)
+
             cardContainer.addView(cardView)
         }
     }
@@ -136,11 +144,18 @@ class HomeFragment : Fragment() {
             )
         }
 
-        for ((title, number, amount) in cardData) {
+        // Destructure the Triple (title, number, amount)
+        for ((index, card) in cardData.withIndex()) {
+            val (title, number, amount) = card // Destructuring the Triple
             val cardView = inflater.inflate(R.layout.item_card, verticalLayout, false)
             cardView.findViewById<TextView>(R.id.cardTitle).text = title
             cardView.findViewById<TextView>(R.id.cardNumber).text = number
             cardView.findViewById<TextView>(R.id.cardAmount).text = amount
+
+            // Set a unique background color for each card (cycling through the cardColors list)
+            val color = cardColors[index % cardColors.size] // cycling through the colors
+            cardView.setBackgroundColor(color)
+
             verticalLayout?.addView(cardView)
         }
 
@@ -175,3 +190,9 @@ class HomePagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
     }
 }
 
+// Colors for the cards and saving account
+val cardColors = listOf(
+    Color.parseColor("#FF6F00"),
+    Color.parseColor("#000000"),
+    Color.parseColor("#D32F2F"),
+)
