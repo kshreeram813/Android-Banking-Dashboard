@@ -153,15 +153,19 @@
             android:id="@+id/tabRadioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal"
             android:gravity="center"
-            android:weightSum="3">
+            android:weightSum="3"
+            android:background="@drawable/tab_group_background"
+            android:padding="4dp">
 
-            <RadioButton
+        <RadioButton
                 android:id="@+id/tabTransact"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:layout_weight="1"
                 android:text="Transact"
                 android:gravity="center"
@@ -173,7 +177,7 @@
             <RadioButton
                 android:id="@+id/tabInvest"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:layout_weight="1"
                 android:text="Invest"
                 android:gravity="center"
@@ -185,7 +189,7 @@
             <RadioButton
                 android:id="@+id/tabLoans"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:layout_weight="1"
                 android:text="Loans &amp; More"
                 android:gravity="center"
@@ -194,6 +198,7 @@
                 android:button="@null"
                 android:textStyle="bold"/>
         </RadioGroup>
+
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/childFragmentContainer"

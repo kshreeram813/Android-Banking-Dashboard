@@ -67,5 +67,9 @@ dependencies {
     implementation (libs.androidx.recyclerview)
     implementation (libs.androidx.cardview)
 
+    implementation (libs.material.v1100)
+    implementation (libs.androidx.viewpager2.v100)
+
+
 
 }
